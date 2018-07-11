@@ -15,6 +15,8 @@ app.use((req, res, next) => {
   next()
 })
 
+app.get('/', () => 'Working')
+
 app.use('/data', dataServiceProxy)
 
 app.use('/stream', streamServiceProxy)
