@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', () => 'Working')
+app.get('/', (req, res) => res.send('Working'))
 
 app.use('/data', dataServiceProxy)
 
