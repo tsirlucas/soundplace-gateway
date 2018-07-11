@@ -1,0 +1,13 @@
+{
+  "name": "soundplace-gateway",
+  "description": "Soundplace API Gateway",
+  "repository": {},
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-http-proxy": "^1.2.0"
+  }
+}
