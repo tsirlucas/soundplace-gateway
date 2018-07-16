@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => res.send('Working :)'))
+app.get('/', (req, res) => res.send('Working :D'))
 
 app.use('/auth', authServiceProxy)
 
