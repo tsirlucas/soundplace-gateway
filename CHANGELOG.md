@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.1...v1.0.2) (2018-07-16)
+
+
+### Bug Fixes
+
+* **auth:** fix auth proxy variable name ([bb473c0](https://github.com/tsirlucas/soundplace-gateway/commit/bb473c0))
+
 ## [1.0.1](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.0...v1.0.1) (2018-07-16)
 
 
