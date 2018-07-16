@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.2...v1.0.3) (2018-07-16)
+
+
+### Bug Fixes
+
+* **routes:** change main route response ([fbc4dc9](https://github.com/tsirlucas/soundplace-gateway/commit/fbc4dc9))
+
 ## [1.0.2](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.1...v1.0.2) (2018-07-16)
 
 
