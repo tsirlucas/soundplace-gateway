@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.0...v1.0.1) (2018-07-16)
+
+
+### Bug Fixes
+
+* **deploy:** fix typo in deploy script ([b169006](https://github.com/tsirlucas/soundplace-gateway/commit/b169006))
+* **deploy:** fix typo in deploy script ([07dd73f](https://github.com/tsirlucas/soundplace-gateway/commit/07dd73f))
+
 # 1.0.0 (2018-07-16)
 
 
