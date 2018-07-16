@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
-const streamServiceProxy = httpProxy(process.env.AUTH_API_ENDPOINT);
+const authServiceProxy = httpProxy(process.env.AUTH_API_ENDPOINT);
 const dataServiceProxy = httpProxy(process.env.DATA_API_ENDPOINT);
 const streamServiceProxy = httpProxy(process.env.STREAM_API_ENDPOINT);
 
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => res.send('Working :)'))
 
-app.use('/auth', dataServiceProxy)
+app.use('/auth', authServiceProxy)
 
 app.use('/data', dataServiceProxy)
 
