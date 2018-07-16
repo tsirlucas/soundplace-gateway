@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.3...v1.0.4) (2018-07-16)
+
+
+### Bug Fixes
+
+* **deploy:** deploy to right pod ([c9c56d3](https://github.com/tsirlucas/soundplace-gateway/commit/c9c56d3))
+
 ## [1.0.3](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.2...v1.0.3) (2018-07-16)
 
 
