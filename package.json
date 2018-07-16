@@ -5,10 +5,20 @@
   "license": "UNLICENSED",
   "version": "1.0.0",
   "main": "server.js",
+  "scripts": {
+    "release": "semantic-release"
+  },
   "dependencies": {
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-http-proxy": "^1.2.0"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^2.1.1",
+    "@semantic-release/exec": "^2.2.4",
+    "@semantic-release/git": "^6.0.1",
+    "@semantic-release/github": "^4.4.1",
+    "semantic-release": "^15.7.1"
   },
   "release": {
     "prepare": [
@@ -29,12 +39,5 @@
     "publish": [
       "@semantic-release/github"
     ]
-  },
-  "devDependencies": {
-    "@semantic-release/changelog": "^2.1.1",
-    "@semantic-release/exec": "^2.2.4",
-    "@semantic-release/git": "^6.0.1",
-    "@semantic-release/github": "^4.4.1",
-    "semantic-release": "^15.7.1"
   }
 }
