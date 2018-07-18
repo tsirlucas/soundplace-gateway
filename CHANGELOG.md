@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.4...v1.1.5) (2018-07-18)
+
+
+### Bug Fixes
+
+* **db:** use tcp proxy instead of http ([e5e331f](https://github.com/tsirlucas/soundplace-gateway/commit/e5e331f))
+
 ## [1.1.4](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.3...v1.1.4) (2018-07-18)
 
 

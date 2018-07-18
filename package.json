@@ -3,7 +3,7 @@
   "description": "Soundplace API Gateway",
   "repository": {},
   "license": "UNLICENSED",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "server.js",
   "scripts": {
     "release": "semantic-release"
