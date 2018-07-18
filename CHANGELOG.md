@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.2...v1.1.3) (2018-07-18)
+
+
+### Bug Fixes
+
+* **pgweb:** fix redirects for pgweb files ([cef1938](https://github.com/tsirlucas/soundplace-gateway/commit/cef1938))
+
 ## [1.1.2](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.1...v1.1.2) (2018-07-18)
 
 
