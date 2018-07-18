@@ -21,14 +21,11 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => res.send('Working :D'))
 
 app.use('/auth', authServiceProxy)
-
 app.use('/data', dataServiceProxy)
-
 app.use('/stream', streamServiceProxy)
 
-app.use('/admin/db', dbProxy)
-
-app.use('/admin/pgweb', pgwebServiceProxy)
+app.use('/db', dbProxy)
+app.use('/pgweb', pgwebServiceProxy)
 
 
 const httpServer = app.listen(process.env.PORT || 8080, (error) => {
