@@ -9,7 +9,11 @@ const authServiceProxy = httpProxy(process.env.AUTH_API_ENDPOINT);
 const dataServiceProxy = httpProxy(process.env.DATA_API_ENDPOINT);
 const streamServiceProxy = httpProxy(process.env.STREAM_API_ENDPOINT);
 const dbProxy = httpProxy(process.env.DATABASE_ENDPOINT);
-const pgwebServiceProxy = httpProxy(process.env.PGWEB_ENDPOINT);
+const pgwebServiceProxy = httpProxy(process.env.PGWEB_ENDPOINT, {
+  pathRewrite: {
+      '^/static/' : '/pgweb/static'      // rewrite path
+  }
+});
 
 
 // Authentication
