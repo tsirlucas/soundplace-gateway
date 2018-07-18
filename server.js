@@ -1,6 +1,7 @@
 const express = require('express');
 const httpProxy = require('express-http-proxy');
-const proxy = require("node-tcp-proxy");
+const tcpProxy = require('tcp-proxy');
+
 
 require('dotenv').config();
 
@@ -10,7 +11,6 @@ const authServiceProxy = httpProxy(process.env.AUTH_API_ENDPOINT);
 const dataServiceProxy = httpProxy(process.env.DATA_API_ENDPOINT);
 const streamServiceProxy = httpProxy(process.env.STREAM_API_ENDPOINT);
 
-proxy.createProxy(5432, process.env.DATABASE_ENDPOINT, 5432);
 
 // Authentication
 app.use((req, res, next) => {
@@ -32,3 +32,13 @@ const httpServer = app.listen(process.env.PORT || 8080, (error) => {
       console.info(`==> 🌎 Listening on ${address.port}. Open up http://localhost:${address.port}/ in your browser.`);
   }
 });
+
+
+var server = tcpProxy.createServer({
+  target: {
+    host: process.env.DATABASE_ENDPOINT,
+    port: 5432
+  }
+});
+
+server.listen(5432);
