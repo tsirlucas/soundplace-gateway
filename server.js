@@ -1,6 +1,5 @@
 const express = require('express');
 const httpProxy = require('express-http-proxy');
-const tcpProxy = require('tcp-proxy');
 
 
 require('dotenv').config();
@@ -32,13 +31,3 @@ const httpServer = app.listen(process.env.PORT || 8080, (error) => {
       console.info(`==> 🌎 Listening on ${address.port}. Open up http://localhost:${address.port}/ in your browser.`);
   }
 });
-
-
-var server = tcpProxy.createServer({
-  target: {
-    host: process.env.DATABASE_ENDPOINT,
-    port: 5432
-  }
-});
-
-server.listen(5432);
