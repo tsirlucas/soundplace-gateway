@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.3...v1.1.4) (2018-07-18)
+
+
+### Bug Fixes
+
+* **pgweb:** remove pgweb ([8e6fe34](https://github.com/tsirlucas/soundplace-gateway/commit/8e6fe34))
+
 ## [1.1.3](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.2...v1.1.3) (2018-07-18)
 
 
