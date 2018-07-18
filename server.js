@@ -1,5 +1,6 @@
 const express = require('express');
 const httpProxy = require('express-http-proxy');
+const proxy = require("node-tcp-proxy");
 
 require('dotenv').config();
 
@@ -8,7 +9,8 @@ const app = express();
 const authServiceProxy = httpProxy(process.env.AUTH_API_ENDPOINT);
 const dataServiceProxy = httpProxy(process.env.DATA_API_ENDPOINT);
 const streamServiceProxy = httpProxy(process.env.STREAM_API_ENDPOINT);
-const dbProxy = httpProxy(process.env.DATABASE_ENDPOINT);
+
+proxy.createProxy(5432, process.env.DATABASE_ENDPOINT, 5432);
 
 // Authentication
 app.use((req, res, next) => {
@@ -21,8 +23,6 @@ app.get('/', (req, res) => res.send('Working :D'))
 app.use('/auth', authServiceProxy)
 app.use('/data', dataServiceProxy)
 app.use('/stream', streamServiceProxy)
-
-app.use('/db', dbProxy)
 
 const httpServer = app.listen(process.env.PORT || 8080, (error) => {
   if (error) {
