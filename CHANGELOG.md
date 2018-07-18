@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.1...v1.1.2) (2018-07-18)
+
+
+### Bug Fixes
+
+* **pgweb:** rewrite static path ([c8e1d39](https://github.com/tsirlucas/soundplace-gateway/commit/c8e1d39))
+
 ## [1.1.1](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.0...v1.1.1) (2018-07-18)
 
 
