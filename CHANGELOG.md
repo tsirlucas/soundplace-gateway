@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.4...v1.0.5) (2018-07-16)
+
+
+### Bug Fixes
+
+* **deploy:** use replication controller name ([3dc13e3](https://github.com/tsirlucas/soundplace-gateway/commit/3dc13e3))
+
 ## [1.0.4](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.3...v1.0.4) (2018-07-16)
 
 
