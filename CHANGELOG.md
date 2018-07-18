@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.5...v1.1.0) (2018-07-18)
+
+
+### Features
+
+* **db:** add db and pgweb endpoints ([353fa66](https://github.com/tsirlucas/soundplace-gateway/commit/353fa66))
+
 ## [1.0.5](https://github.com/tsirlucas/soundplace-gateway/compare/v1.0.4...v1.0.5) (2018-07-16)
 
 
