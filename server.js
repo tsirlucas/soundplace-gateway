@@ -11,12 +11,6 @@ const dataServiceProxy = httpProxy(process.env.DATA_API_ENDPOINT);
 const streamServiceProxy = httpProxy(process.env.STREAM_API_ENDPOINT);
 
 
-// Authentication
-app.use((req, res, next) => {
-  // TODO: my authentication logic
-  next()
-})
-
 app.get('/', (req, res) => res.send('Working :D'))
 
 app.use('/auth', authServiceProxy)

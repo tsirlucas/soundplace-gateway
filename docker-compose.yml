@@ -3,7 +3,51 @@ version: '3.6'
 services:
   gateway:
     build: .
-    env_file:
-      - .env
+    environment:
+      - AUTH_API_ENDPOINT=auth:3003
+      - DATA_API_ENDPOINT=api:3000
+      - STREAM_API_ENDPOINT=stream:3001
+    volumes:
+      - .:/app
+    networks:
+      - net
     ports:
       - '8080:8080'
+  auth:
+    build: ../soundplace-auth
+    env_file:
+      - .secrets/database.env
+      - .secrets/spotify.env
+      - .secrets/jwt.env
+    environment:
+      - API_URL=http://localhost:8080
+      - CLIENT_URL=http://localhost:9000
+    volumes:
+      - ../soundplace-auth:/app
+    networks:
+      - net
+    ports:
+      - '3003:3003'
+  api:
+    build: ../soundplace-api
+    command: npm start
+    env_file:
+      - .secrets/database.env
+    environment:
+      - AUTH_API_ENDPOINT=auth:3003
+    volumes:
+      - ../soundplace-api:/app
+    networks:
+      - net
+    ports:
+      - '3000:3000'
+  stream:
+    build: ../soundplace-stream
+    volumes:
+      - ../soundplace-stream:/app
+    ports:
+      - '3001:3001'
+networks:
+  net:
+    driver: bridge
+
