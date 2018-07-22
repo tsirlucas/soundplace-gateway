@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.6...v1.2.0) (2018-07-22)
+
+
+### Bug Fixes
+
+* **db:** remove db from gateway ([49d6e7b](https://github.com/tsirlucas/soundplace-gateway/commit/49d6e7b))
+
+
+### Features
+
+* **compose:** use docker-compose to run all services ([657d167](https://github.com/tsirlucas/soundplace-gateway/commit/657d167))
+
 ## [1.1.6](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.5...v1.1.6) (2018-07-18)
 
 
