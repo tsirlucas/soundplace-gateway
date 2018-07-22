@@ -6,6 +6,7 @@ services:
     environment:
       - AUTH_API_ENDPOINT=auth:3003
       - DATA_API_ENDPOINT=api:3000
+      - GRAPHQL_API_ENDPOINT=graphql:3004
       - STREAM_API_ENDPOINT=stream:3001
     volumes:
       - .:/app
@@ -41,6 +42,19 @@ services:
       - net
     ports:
       - '3000:3000'
+  graphql:
+    build: ../soundplace-graphql
+    command: npm start
+    env_file:
+      - .secrets/database.env
+    environment:
+      - AUTH_API_ENDPOINT=auth:3003
+    volumes:
+      - ../soundplace-graphql:/app
+    networks:
+      - net
+    ports:
+      - '3004:3004'
   stream:
     build: ../soundplace-stream
     volumes:
