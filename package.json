@@ -11,6 +11,7 @@
     "release": "semantic-release"
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-http-proxy": "^1.2.0"

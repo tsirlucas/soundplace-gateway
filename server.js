@@ -1,6 +1,6 @@
 const express = require('express');
 const httpProxy = require('express-http-proxy');
-
+const cors = require('cors');
 
 require('dotenv').config();
 
@@ -21,11 +21,14 @@ const graphqlServiceProxy = httpProxy(process.env.GRAPHQL_API_ENDPOINT, {
   proxyReqPathResolver: (req) => changePath(req, 'graphql'),
 });
 
-app.get('/', (req, res) => res.send('Working :D'))
-   .use('/auth', authServiceProxy)
-   .use('/data', dataServiceProxy)
-   .use('/stream', streamServiceProxy)
-   .use('/graphql', graphqlServiceProxy)
+app
+  .use(cors())
+  .options('*', cors())
+  .get('/', (req, res) => res.send('Working :D'))
+  .use('/auth', authServiceProxy)
+  .use('/data', dataServiceProxy)
+  .use('/stream', streamServiceProxy)
+  .use('/graphql', graphqlServiceProxy)
 
 const httpServer = app.listen(process.env.PORT || 8080, (error) => {
   if (error) {
