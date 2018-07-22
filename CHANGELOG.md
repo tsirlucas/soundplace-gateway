@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/tsirlucas/soundplace-gateway/compare/v1.2.0...v1.3.0) (2018-07-22)
+
+
+### Features
+
+* **graphql:** add graphql endpoint ([5cc39f3](https://github.com/tsirlucas/soundplace-gateway/commit/5cc39f3))
+
 # [1.2.0](https://github.com/tsirlucas/soundplace-gateway/compare/v1.1.6...v1.2.0) (2018-07-22)
 
 
