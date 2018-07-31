@@ -2,6 +2,7 @@ version: '3.6'
 
 services:
   gateway:
+    command: npm run dev
     build: .
     environment:
       - AUTH_API_ENDPOINT=auth:3003
@@ -15,6 +16,7 @@ services:
     ports:
       - '8080:8080'
   auth:
+    command: npm run dev
     build: ../soundplace-auth
     env_file:
       - .secrets/database.env
@@ -23,6 +25,7 @@ services:
     environment:
       - API_URL=http://localhost:8080
       - CLIENT_URL=http://localhost:9000
+      - DATABASE_ENDPOINT=db
     volumes:
       - ../soundplace-auth:/app
     networks:
@@ -31,11 +34,12 @@ services:
       - '3003:3003'
   api:
     build: ../soundplace-api
-    command: npm start
+    command: npm run dev
     env_file:
       - .secrets/database.env
     environment:
       - AUTH_API_ENDPOINT=auth:3003
+      - DATABASE_ENDPOINT=db
     volumes:
       - ../soundplace-api:/app
     networks:
@@ -44,11 +48,12 @@ services:
       - '3000:3000'
   graphql:
     build: ../soundplace-graphql
-    command: npm start
+    command: npm run dev
     env_file:
       - .secrets/database.env
     environment:
       - AUTH_API_ENDPOINT=auth:3003
+      - DATABASE_ENDPOINT=db
     volumes:
       - ../soundplace-graphql:/app
     networks:
@@ -61,6 +66,16 @@ services:
       - ../soundplace-stream:/app
     ports:
       - '3001:3001'
+  db:
+    build: ../soundplace-db
+    env_file:
+      - .secrets/database.env
+    volumes:
+      - ../soundplace-db:/app
+    networks:
+      - net
+    ports:
+      - '5432:5432'
 networks:
   net:
     driver: bridge
