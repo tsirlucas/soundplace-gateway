@@ -14,10 +14,22 @@ const changePath = (req) => {
   return resolvedPathValue;
 }
 
-const authServiceProxy = httpProxy({target: 'http://' + process.env.AUTH_API_ENDPOINT});
-const dataServiceProxy = httpProxy({target: 'http://' + process.env.DATA_API_ENDPOINT});
-const streamServiceProxy = httpProxy({target: 'http://' + process.env.STREAM_API_ENDPOINT});
-const graphqlServiceProxy = httpProxy({target: 'http://' + process.env.GRAPHQL_API_ENDPOINT,
+const authServiceProxy = httpProxy('http://' + process.env.AUTH_API_ENDPOINT, {
+  pathRewrite: {
+    '/auth': '/'
+  },
+});
+const dataServiceProxy = httpProxy('http://' + process.env.DATA_API_ENDPOINT, {
+  pathRewrite: {
+    '/data': '/'
+  },
+});
+const streamServiceProxy = httpProxy('http://' + process.env.STREAM_API_ENDPOINT, {
+  pathRewrite: {
+    '/stream': '/'
+  },
+});
+const graphqlServiceProxy = httpProxy('http://' + process.env.GRAPHQL_API_ENDPOINT, {
   pathRewrite: {
     '/graphql': '/graphql'
   },
