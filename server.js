@@ -1,5 +1,5 @@
 const express = require('express');
-const httpProxy = require('express-http-proxy');
+const httpProxy = require('http-proxy-middleware');
 const cors = require('cors');
 
 require('dotenv').config();
@@ -14,11 +14,14 @@ const changePath = (req) => {
   return resolvedPathValue;
 }
 
-const authServiceProxy = httpProxy(process.env.AUTH_API_ENDPOINT);
-const dataServiceProxy = httpProxy(process.env.DATA_API_ENDPOINT);
-const streamServiceProxy = httpProxy(process.env.STREAM_API_ENDPOINT);
-const graphqlServiceProxy = httpProxy(process.env.GRAPHQL_API_ENDPOINT, {
-  proxyReqPathResolver: (req) => changePath(req, 'graphql'),
+const authServiceProxy = httpProxy({target: 'http://' + process.env.AUTH_API_ENDPOINT});
+const dataServiceProxy = httpProxy({target: 'http://' + process.env.DATA_API_ENDPOINT});
+const streamServiceProxy = httpProxy({target: 'http://' + process.env.STREAM_API_ENDPOINT});
+const graphqlServiceProxy = httpProxy({target: 'http://' + process.env.GRAPHQL_API_ENDPOINT,
+  pathRewrite: {
+    '/graphql': '/graphql'
+  },
+  ws: true,
 });
 
 app
