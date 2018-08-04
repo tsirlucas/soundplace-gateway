@@ -20,7 +20,7 @@ services:
     build: ../soundplace-auth
     env_file:
       - .secrets/database.env
-      - .secrets/spotify.env
+      - .secrets/youtube.env
       - .secrets/jwt.env
     environment:
       - API_URL=http://localhost:8080
@@ -64,6 +64,8 @@ services:
     build: ../soundplace-stream
     volumes:
       - ../soundplace-stream:/app
+    networks:
+      - net
     ports:
       - '3001:3001'
   db:
