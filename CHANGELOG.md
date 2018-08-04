@@ -1,3 +1,12 @@
+## [1.3.2](https://github.com/tsirlucas/soundplace-gateway/compare/v1.3.1...v1.3.2) (2018-08-04)
+
+
+### Bug Fixes
+
+* **compose:** add network to stream and use youtube .env ([e2ca2a5](https://github.com/tsirlucas/soundplace-gateway/commit/e2ca2a5))
+* **proxy:** fix problems with rewrite path ([af9b41f](https://github.com/tsirlucas/soundplace-gateway/commit/af9b41f))
+* **proxy:** use http-proxy-middleware for ws support ([b51ff35](https://github.com/tsirlucas/soundplace-gateway/commit/b51ff35))
+
 ## [1.3.1](https://github.com/tsirlucas/soundplace-gateway/compare/v1.3.0...v1.3.1) (2018-07-22)
 
 
