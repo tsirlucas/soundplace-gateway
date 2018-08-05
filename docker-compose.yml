@@ -24,6 +24,7 @@ services:
       - .secrets/jwt.env
     environment:
       - API_URL=http://localhost:8080
+      - DATA_API_ENDPOINT=api:3000
       - CLIENT_URL=http://localhost:9000
       - DATABASE_ENDPOINT=db
     volumes:
