@@ -29,11 +29,14 @@ const streamServiceProxy = httpProxy('http://' + process.env.STREAM_API_ENDPOINT
     '/stream': '/'
   },
 });
-const graphqlServiceProxy = httpProxy('http://' + process.env.GRAPHQL_API_ENDPOINT, {
+const graphqlServiceProxy = httpProxy({
+  target: 'ws://' + process.env.GRAPHQL_API_ENDPOINT,
   pathRewrite: {
     '/graphql': '/graphql'
   },
   ws: true,
+  logLevel: 'debug',
+  onError: (e) => console.log(e),
 });
 
 app
