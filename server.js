@@ -30,13 +30,14 @@ const streamServiceProxy = httpProxy('http://' + process.env.STREAM_API_ENDPOINT
   },
 });
 const graphqlServiceProxy = httpProxy({
-  target: 'ws://' + process.env.GRAPHQL_API_ENDPOINT,
-  pathRewrite: {
-    '/graphql': '/graphql'
-  },
+  target: 'http://' + process.env.GRAPHQL_API_ENDPOINT,
+  changeOrigin:true,
   ws: true,
   logLevel: 'debug',
   onError: (e) => console.log(e),
+  pathRewrite: {
+    '/graphql': '/graphql'
+  },
 });
 
 app
@@ -56,3 +57,5 @@ const httpServer = app.listen(process.env.PORT || 8080, (error) => {
     console.info(`==> 🌎 Listening on ${address.port}. Open up http://localhost:${address.port}/ in your browser.`);
   }
 });
+
+httpServer.on('upgrade', graphqlServiceProxy.upgrade);
