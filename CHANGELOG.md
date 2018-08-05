@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/tsirlucas/soundplace-gateway/compare/v1.3.3...v1.3.4) (2018-08-05)
+
+
+### Bug Fixes
+
+* **graphql:** fixes on graphql proxy ([39da2cb](https://github.com/tsirlucas/soundplace-gateway/commit/39da2cb))
+
 ## [1.3.3](https://github.com/tsirlucas/soundplace-gateway/compare/v1.3.2...v1.3.3) (2018-08-05)
 
 
