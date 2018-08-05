@@ -1,3 +1,11 @@
+## [1.3.3](https://github.com/tsirlucas/soundplace-gateway/compare/v1.3.2...v1.3.3) (2018-08-05)
+
+
+### Bug Fixes
+
+* **auth:** pass data_api_endpoint as env var ([8f84bee](https://github.com/tsirlucas/soundplace-gateway/commit/8f84bee))
+* **graphq:** make graphql proxy debuggable ([1599524](https://github.com/tsirlucas/soundplace-gateway/commit/1599524))
+
 ## [1.3.2](https://github.com/tsirlucas/soundplace-gateway/compare/v1.3.1...v1.3.2) (2018-08-04)
 
 
