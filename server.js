@@ -31,7 +31,7 @@ const streamServiceProxy = httpProxy('http://' + process.env.STREAM_API_ENDPOINT
 });
 const graphqlServiceProxy = httpProxy({
   target: 'http://' + process.env.GRAPHQL_API_ENDPOINT,
-  changeOrigin:true,
+  changeOrigin: true,
   ws: true,
   logLevel: 'debug',
   onError: (e) => console.log(e),
